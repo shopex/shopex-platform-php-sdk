@@ -1,0 +1,24 @@
+{
+    "name": "luocj/shopex-platform-php-sdk",
+    "description": "商派开放平台php sdk",
+    "type": "l",
+    "require": {
+        "php": "~7.0"
+    },
+    "require-dev": {
+
+    },
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "luochenjie",
+            "email": "luochenjie@shopex.cn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Shopex\\": "src/Shopex"
+        }
+    }
+}
