@@ -4,7 +4,7 @@
 
 ## 2. 安装开放平台sdk
 ```shell script
-composer require luocj/shopex-platform-php-sdk
+composer require shopex/shopex-platform-php-sdk
 ```
 
 ## 3. 代码使用示例
