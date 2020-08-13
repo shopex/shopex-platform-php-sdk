@@ -1,5 +1,5 @@
 {
-    "name": "luocj/shopex-platform-php-sdk",
+    "name": "shopex/shopex-platform-php-sdk",
     "description": "商派开放平台php sdk",
     "type": "l",
     "require": {
