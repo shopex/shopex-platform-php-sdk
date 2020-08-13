@@ -1,14 +1,15 @@
 # Shopex platform-php-sdk
 
-## 在开放平台上获取appKey 与 appSecret
+## 1. 在开放平台上获取appKey 与 appSecret
 
-## 安装开放平台sdk
+## 2. 安装开放平台sdk
 ```shell script
 composer require luocj/shopex-platform-php-sdk
 ```
 
-## 代码使用示例
+## 3. 代码使用示例
 ```php
+<?php
 $app_key = '####';
 $app_secret = '####';
 $sdk = new \Shopex\Components\Sdk($app_key,$app_secret);
@@ -45,3 +46,9 @@ var_dump($result);
 ## 更多
 ### [文档中心](http://platform-developer.ex-sandbox.com/docs)
 ### [功能包中心](http://platform-developer.ex-sandbox.com/pack)
+```shell script
+# 配置阿里云镜像源
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+# 取消配置阿里云镜像源
+composer config -g --unset repos.packagist
+```
