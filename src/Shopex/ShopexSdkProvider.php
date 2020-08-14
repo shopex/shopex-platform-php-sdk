@@ -34,7 +34,7 @@ class ShopexSdkProvider extends ServiceProvider
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config/shopex_sdk.php' => config_path('shopex_sdk.php')], 'shopex-platform-sdk-config');
+            $this->publishes([__DIR__.'/../../config/shopex_sdk.php' => config_path('shopex_sdk.php')], 'shopex-platform-sdk-config');
         }
     }
 }
