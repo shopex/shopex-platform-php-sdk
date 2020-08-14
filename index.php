@@ -35,3 +35,4 @@ $params['require_receive_time'] = '2020-08-12 18:15:23';
 
 $result = $sdk->request($url,$method,$params);
 var_dump($result);
+

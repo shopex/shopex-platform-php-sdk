@@ -28,9 +28,9 @@
             "providers": [
                 "Shopex\\ShopexSdkProvider"
             ],
-            "aliases": [
-                "Shopex\\Shopex"
-            ]
+            "aliases": {
+                "ShopexFacade": "Shopex\\Facades\\ShopexFacade"
+            }
         }
     }
 }
