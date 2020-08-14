@@ -7,8 +7,9 @@ $test->test();
 # sdk test
 $app_key = '12e899f635cc4be095f99a47a4f74e9106d345b6d7264f92b6c259967701a8a1';
 $app_secret = '0ee7bc67f850476aad19725341366794';
-$sdk = new \Shopex\Components\Sdk($app_key,$app_secret);
-$url = "http://platform-gateway.ex-sandbox.com/Rjletw/";//订单创建
+$sdk = new \Shopex\Components\Sdk($app_key,$app_secret,true);
+//$url = "http://platform-gateway.ex-sandbox.com/Rjletw/";//订单创建
+$path = "Rjletw";
 $method = "delivery.order.create";
 $params['create_time'] = '2020-08-10 17:15:23';
 $params['has_invoice'] = 0;
@@ -33,6 +34,6 @@ $params['total_pay_fee'] = 12300;
 $params['user_id'] = "1054182434";
 $params['require_receive_time'] = '2020-08-12 18:15:23';
 
-$result = $sdk->request($url,$method,$params);
+$result = $sdk->request($path,$method,$params);
 var_dump($result);
 

@@ -5,17 +5,26 @@
 ## 2. 安装开放平台sdk
 ```shell script
 composer require shopex/shopex-platform-php-sdk
+
+# 如果使用laravel or lumen框架
+    php artisan vendor:publish --tag=shopex-platform-sdk-config
+    php artisan config:clear
+    # 修改 config/shopex_sdk.php 在env中添加对应参数
 ```
 
 ## 3. 代码使用示例
 ```php
 <?php
-$app_key = '####';
-$app_secret = '####';
-$sdk = new \Shopex\Components\Sdk($app_key,$app_secret);
-$url = "http://platform-gateway.ex-sandbox.com/Rjletw/";//订单创建
-$method = "delivery.order.create";
+# 1. 非laravel or lumen 框架
+    $app_key = '####';
+    $app_secret = '####';
+    $is_dev = false;
+    $sdk = new \Shopex\Components\Client($app_key,$app_secret,$is_dev);
+# 2. laravel or lumen 框架 配置按照 shopex_sdk.php中的key在 .env 文件中配置好
+    $sdk = \Shopex\Facades\ShopexFacade::client();
 
+$path = "Rjletw";
+$method = "delivery.order.create";
 $params['create_time'] = '2020-08-10 17:15:23';
 $params['has_invoice'] = 0;
 $params['is_agent_payment'] = 0;
@@ -39,7 +48,7 @@ $params['total_pay_fee'] = 12300;
 $params['user_id'] = "1054182434";
 $params['require_receive_time'] = '2020-08-12 18:15:23';
 
-$result = $sdk->request($url,$method,$params);
+$result = $sdk->request($path,$method,$params);
 var_dump($result);
 ```
 

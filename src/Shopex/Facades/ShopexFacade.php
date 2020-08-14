@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * Class ShopexFacade
- * @method static \Shopex\Components\Sdk sdk()
+ * @method static \Shopex\Components\Client client()
  * @package Shopex\Facades
  */
 class ShopexFacade extends Facade

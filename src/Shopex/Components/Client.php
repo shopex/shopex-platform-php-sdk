@@ -4,15 +4,22 @@
 namespace Shopex\Components;
 
 
-class Sdk
+class Client
 {
     public $appKey;
     public $appSecret;
+    public $url;
 
-    public function __construct($appKey, $appSecret)
+    public function __construct($appKey, $appSecret, $isDev = false)
     {
         $this->appKey = $appKey;
         $this->appSecret = $appSecret;
+        if ($isDev) {
+            $this->url = "http://platform-gateway.ex-sandbox.com";
+        } else {
+            $this->url = "";
+        }
+
     }
 
     public function genSign($params, $secret)
@@ -33,8 +40,9 @@ class Sdk
         return $sign;
     }
 
-    public function request($url, $method, $params)
+    public function request($path, $method, $params)
     {
+        $url = $this->url . "/{$path}/";
         $params['timestamp'] = date("Y-m-d H:i:s", time());
         $params['app_key'] = $this->appKey;
         $params['version'] = '1.0';
@@ -65,12 +73,12 @@ class Sdk
 
         if ($err) {
 //            echo "cURL Error #:" . $err;
-            if (config('shopex_sdk.debug')){
+            if (config('shopex_sdk.debug')) {
                 return $err;
             }
             return false;
         } else {
-            return json_decode($response,true);
+            return json_decode($response, true);
         }
     }
 }

@@ -4,11 +4,12 @@
 namespace Shopex;
 
 
-use Shopex\Components\Sdk;
+use Shopex\Components\Client;
 
 class Shopex
 {
-    public static function sdk(){
-        return new Sdk(config("shopex_sdk.appKey"),config("shopex_sdk.appSecret"));
+    public static function client()
+    {
+        return new Client(config("shopex_sdk.appKey"), config("shopex_sdk.appSecret"), config("shopex_sdk.isDev"));
     }
 }
