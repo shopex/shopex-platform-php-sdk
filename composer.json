@@ -20,7 +20,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Shopex\\": "src/Shopex"
+            "Shopex\\": "src/Shopex/"
         }
     },
     "extra": {
