@@ -65,6 +65,9 @@ class Sdk
 
         if ($err) {
 //            echo "cURL Error #:" . $err;
+            if (config('shopex_sdk.debug')){
+                return $err;
+            }
             return false;
         } else {
             return json_decode($response,true);

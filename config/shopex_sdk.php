@@ -1,5 +1,6 @@
 <?php
 return [
-    "appKey"=>"1",
-    "appSecret"=>"2",
+    "appKey" => env("SHOPEX_PLATFORM_APP_KEY", ""),
+    "appSecret" => env("SHOPEX_PLATFORM_APP_SECRET", ""),
+    "debug" => env("SHOPEX_PLATFORM_SDK_DEBUG", false)
 ];
