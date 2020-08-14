@@ -7,7 +7,7 @@ $test->test();
 # sdk test
 $app_key = '12e899f635cc4be095f99a47a4f74e9106d345b6d7264f92b6c259967701a8a1';
 $app_secret = '0ee7bc67f850476aad19725341366794';
-$sdk = new \Shopex\Components\Sdk($app_key,$app_secret,true);
+$sdk = new \Shopex\Components\Client($app_key,$app_secret,true);
 //$url = "http://platform-gateway.ex-sandbox.com/Rjletw/";//订单创建
 $path = "Rjletw";
 $method = "delivery.order.create";
